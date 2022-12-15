@@ -12,6 +12,8 @@ $(document).ready(function() {
 
     var crousel = document.querySelector(".carousel-inner");
 
+    var navColor = document.querySelector(".navbar");
+
     var list_items = document.querySelectorAll(".list-group");
     console.log(list_items);
 
@@ -42,7 +44,16 @@ $(document).ready(function() {
     $("#cupping").show();
 
 
-
+    window.onwheel = e => {
+        if(e.deltaY >= 0){
+          // Scrolling Down with mouse
+          navColor.style.backgroundColor="#131d1b"
+        } else {
+          // Scrolling Up with mouse
+          console.log('Scroll Up');
+          navColor.style.backgroundColor="#2c3838"
+        }
+      }
    
     
     // $(".dropdown-toggle").dropdown();
@@ -52,6 +63,10 @@ $(document).ready(function() {
 
 
     var headElement = $('.m-txt');
+
+    window.addEventListener('scroll',()=>{
+        
+    })
 
     window.addEventListener('scroll',()=>{
         // console.log(headElement.offset().top);  
@@ -87,7 +102,7 @@ $(document).ready(function() {
                 }
 
                 if(abttxt.getBoundingClientRect().top<window.innerHeight/5*4){
-                    abttxt.classList.add('animate__animated', 'animate__backInLeft');
+                    abttxt.classList.add('animate__animated', 'animate__fadeInUp');
                 }
                
          
